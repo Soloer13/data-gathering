@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/links', function () {
+    $links = \App\Link::all();
+ 
+    return view('welcome', ['links' => $links]);
+});
